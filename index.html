@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Outil interactif de formation pour le Parcours Product Owner — Leçons séquentielles, Quiz interactifs avec corrigés masqués, encouragements et préparation à la certification PSPO I.">
+  <title>Parcours Product Owner — Formation Complète & Outil Interactif</title>
+
+  <!-- Polices Google Fonts modernes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap"
+    rel="stylesheet">
+
+  <!-- Feuilles de style -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- En-tête de l'application -->
+  <header class="app-header">
+    <div class="header-left">
+      <button type="button" class="btn-sidebar-toggle" id="btn-toggle-sidebar"
+        aria-label="Afficher ou masquer le sommaire" title="Basculer le sommaire">
+        ☰
+      </button>
+      <div class="brand-badge">
+        <div class="brand-icon">🚀</div>
+        <div>
+          <div class="brand-title">Product Owner</div>
+          <div class="brand-sub">Parcours Interactif & PSPO I</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="header-center">
+      <div class="progress-widget">
+        <div class="progress-widget-top">
+          <span>Progression globale</span>
+          <span class="progress-widget-percent" id="global-progress-percent">0%</span>
+        </div>
+        <div class="progress-bar-track">
+          <div class="progress-bar-fill" id="global-progress-bar"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="header-right">
+      <div class="stat-pill" id="quiz-stat-pill" title="Nombre de quiz validés">
+        🏆 0 / 18 quiz
+      </div>
+      <button type="button" class="btn-icon" id="btn-theme-toggle" aria-label="Changer de thème"
+        title="Passer au mode clair">
+        ☀️
+      </button>
+    </div>
+  </header>
+
+  <!-- Conteneur principal (Sidebar + Contenu) -->
+  <div class="app-container">
+    <!-- Barre latérale / Sommaire -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="search-box">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="sidebar-search" class="search-input" placeholder="Rechercher une notion, un quiz..."
+            autocomplete="off">
+        </div>
+        <div class="filter-chips">
+          <button type="button" class="chip-btn active" data-filter="all">Tous</button>
+          <button type="button" class="chip-btn" data-filter="quiz">Quiz</button>
+          <button type="button" class="chip-btn" data-filter="deliverable">Livrables</button>
+          <button type="button" class="chip-btn" data-filter="todo">À faire</button>
+          <button type="button" class="chip-btn" data-filter="done">Validés</button>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav" id="sidebar-nav" aria-label="Sommaire du cours">
+        <!-- Généré dynamiquement par app.js -->
+      </nav>
+
+      <div class="sidebar-footer">
+        <button type="button" class="btn-text-danger" id="btn-reset-progress"
+          title="Effacer l'historique de progression">
+          <span>🗑️</span>
+          <span>Réinitialiser</span>
+        </button>
+        <span style="font-size:0.75rem;color:var(--text-muted);">94 modules</span>
+      </div>
+    </aside>
+
+    <!-- Zone principale d'affichage de la leçon -->
+    <main class="main-content" id="main-content">
+      <!-- Rendu dynamique par app.js -->
+    </main>
+  </div>
+
+  <!-- Canvas pour animation de confettis festifs -->
+  <canvas id="confetti-canvas"></canvas>
+
+  <!-- Données et logique -->
+  <script src="course-data.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>
